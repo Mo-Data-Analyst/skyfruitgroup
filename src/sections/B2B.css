@@ -1,0 +1,95 @@
+/* ================= B2B band ================= */
+.band {
+  background: var(--g9);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.band h2,
+.band h3 {
+  color: #fff;
+}
+.band p {
+  color: #bacbbe;
+}
+.b2b {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+.audience {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.audience li {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  font-size: 0.93rem;
+  color: #e4eee6;
+}
+.steps {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  counter-reset: b;
+}
+.steps li {
+  position: relative;
+  padding-inline-start: 3.4rem;
+  padding-bottom: 1.5rem;
+}
+.steps li::before {
+  counter-increment: b;
+  content: counter(b, arabic-indic);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.05rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--leaf);
+  display: grid;
+  place-items: center;
+  font-family: var(--f-display);
+  font-weight: 600;
+  color: var(--leaf);
+}
+:lang(en) .steps li::before {
+  content: counter(b);
+}
+.steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 1.15rem;
+  top: 2.6rem;
+  bottom: 0.3rem;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+.steps b {
+  font-family: var(--f-display);
+  font-weight: 600;
+  display: block;
+  color: #fff;
+}
+.steps span {
+  color: #bacbbe;
+  font-size: 0.96rem;
+}
+@media (max-width: 880px) {
+  .b2b {
+    grid-template-columns: 1fr;
+  }
+}
+.kicker--light {
+  color: var(--leaf);
+}
+.b2b-steps-title {
+  margin-bottom: 1.4rem;
+}

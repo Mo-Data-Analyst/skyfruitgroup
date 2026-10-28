@@ -1,0 +1,57 @@
+/* =========================================================
+   DESIGN TOKENS
+   Change brand colors, fonts, corner radii and spacing here.
+   Every other CSS file reads these variables, so one edit
+   updates the whole website.
+   ========================================================= */
+:root {
+  /* Brand greens (dark → light) */
+  --g9: #163a2b; /* deep forest: headings, dark sections, strip */
+  --g8: #1e4a36;
+  --g7: #2a5e40; /* links */
+  --g6: #3b7a47; /* primary buttons, accents */
+  --g5: #4f9157;
+  --leaf: #86bc77; /* light accent on dark backgrounds */
+
+  /* Text */
+  --ink: #16231b; /* body text */
+  --muted: #4f5e54; /* secondary text */
+
+  /* Backgrounds */
+  --bg: #d9e3d3; /* muted sage: main page background */
+  --ivory: #f0eadc; /* warm ivory: alternating sections */
+  --surface: #fbfaf5; /* cards and panels */
+  --tint: #dce6d5; /* soft green fills (icons, highlights) */
+  --sand: #e8e1d1; /* image placeholders */
+  --hero-bg: linear-gradient(180deg, #e2e8dd 0%, #e7ebe2 55%, #e4e9e0 100%);
+  --footer-bg: #0f261c;
+
+  /* Lines, states */
+  --line: #d3dbcd;
+  --line2: #bfcab8;
+  --err: #a3261d;
+  --focus: #3b7a47;
+
+  /* Fonts (loaded in index.html from Google Fonts) */
+  --f-display: "Alexandria", "IBM Plex Sans Arabic", Tahoma, "Segoe UI", sans-serif;
+  --f-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, "Noto Sans Arabic", sans-serif;
+
+  /* Layout */
+  --wrap: 1240px; /* max content width */
+  --gutter: clamp(1.15rem, 4vw, 2.75rem); /* side padding */
+  --head: 78px; /* header height */
+
+  /* Corners and shadow */
+  --r-sm: 6px;
+  --r: 10px;
+  --r-lg: 16px;
+  --shadow: 0 1px 2px rgba(22, 58, 43, 0.05), 0 10px 26px -20px rgba(22, 58, 43, 0.3);
+
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+:root:lang(en) {
+  --f-body: "IBM Plex Sans Arabic", "Segoe UI", Arial, sans-serif;
+}

@@ -1,0 +1,40 @@
+/* ================= Dialog ================= */
+dialog {
+  border: 0;
+  border-radius: var(--r-lg);
+  padding: 0;
+  max-width: min(560px, 92vw);
+  background: var(--surface);
+  color: var(--ink);
+}
+dialog::backdrop {
+  background: rgba(10, 26, 18, 0.55);
+}
+.dlg {
+  padding: 1.75rem;
+}
+.dlg-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.dlg-head h2 {
+  font-size: 1.3rem;
+}
+.icon-btn {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-sm);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+}

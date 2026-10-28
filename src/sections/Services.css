@@ -1,0 +1,82 @@
+/* ================= Services ================= */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+}
+.svc {
+  grid-column: span 2;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 1.75rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.svc:nth-child(4),
+.svc:nth-child(5) {
+  grid-column: span 3;
+}
+.svc:hover {
+  border-color: var(--line2);
+  box-shadow: var(--shadow);
+}
+.svc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.svc .ico {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--tint);
+  color: var(--g7);
+  display: grid;
+  place-items: center;
+}
+.svc .ico svg {
+  width: 26px;
+  height: 26px;
+}
+.svc .num {
+  font-family: var(--f-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--line2);
+}
+.svc p {
+  color: var(--muted);
+  font-size: 0.97rem;
+  margin-bottom: 1rem;
+}
+.svc .textlink {
+  margin-top: auto;
+  align-self: flex-start;
+}
+@media (max-width: 1000px) {
+  .svc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .svc,
+  .svc:nth-child(4),
+  .svc:nth-child(5) {
+    grid-column: auto;
+  }
+  .svc:nth-child(5) {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 620px) {
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
+  .svc:nth-child(5) {
+    grid-column: auto;
+  }
+}

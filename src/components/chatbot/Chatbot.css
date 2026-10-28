@@ -1,0 +1,224 @@
+/* ================= FAQ chatbot ================= */
+.cb-launch {
+  position: fixed;
+  z-index: 70;
+  bottom: calc(1.1rem + env(safe-area-inset-bottom, 0px));
+  inset-inline-end: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 54px;
+  padding: 0 1.25rem;
+  border-radius: 999px;
+  background: var(--g9);
+  color: #fff;
+  border: 0;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  cursor: pointer;
+  box-shadow: 0 14px 30px -12px rgba(10, 26, 18, 0.6);
+}
+.cb-launch:hover {
+  background: var(--g8);
+}
+.cb-launch svg {
+  width: 22px;
+  height: 22px;
+  color: var(--leaf);
+}
+
+.cb-panel {
+  position: fixed;
+  z-index: 71;
+  bottom: calc(1.1rem + env(safe-area-inset-bottom, 0px));
+  inset-inline-end: 1.1rem;
+  width: min(390px, calc(100vw - 2.2rem));
+  height: min(
+    600px,
+    calc(100dvh - var(--head) - 2.5rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))
+  );
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -24px rgba(10, 26, 18, 0.5);
+}
+
+.cb-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1rem;
+  background: var(--g9);
+  color: #fff;
+}
+.cb-head img {
+  width: 34px;
+  height: auto;
+  background: #fff;
+  border-radius: 50%;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.cb-head strong {
+  display: block;
+  font-family: var(--f-display);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.cb-head span {
+  font-size: 0.8rem;
+  color: #b7c9bc;
+  line-height: 1.4;
+}
+.cb-x {
+  margin-inline-start: auto;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cb-x:hover {
+  border-color: #fff;
+}
+.cb-x svg {
+  width: 18px;
+  height: 18px;
+}
+.cb-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--bg);
+  overscroll-behavior: contain;
+}
+.cb-msg {
+  max-width: 88%;
+  padding: 0.6rem 0.85rem;
+  border-radius: 12px;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+.cb-msg.bot {
+  align-self: flex-start;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-start-start-radius: 4px;
+  color: var(--ink);
+}
+.cb-msg.user {
+  align-self: flex-end;
+  background: var(--g9);
+  color: #fff;
+  border-start-end-radius: 4px;
+}
+.cb-acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.cb-act {
+  font-family: var(--f-display);
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--g7);
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  padding: 0.15rem 0.8rem;
+  text-decoration: none;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+}
+.cb-act:hover {
+  background: var(--tint);
+}
+.cb-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.65rem 0.9rem;
+  border-top: 1px solid var(--line);
+  background: #fff;
+  max-height: 138px;
+  overflow-y: auto;
+}
+.cb-chip {
+  font-family: var(--f-body);
+  font-size: 0.84rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  min-height: 36px;
+  line-height: 1.35;
+}
+.cb-chip:hover {
+  border-color: var(--g9);
+}
+.cb-chip.more {
+  color: var(--g7);
+  border-style: dashed;
+  background: #fff;
+  font-weight: 600;
+}
+.cb-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.7rem;
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+.cb-form input[type="text"] {
+  flex: 1;
+  min-height: 44px;
+  font-size: 16px;
+}
+.cb-send {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--g6);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cb-send:hover {
+  background: var(--g7);
+}
+.cb-send svg {
+  width: 20px;
+  height: 20px;
+}
+:root[dir="rtl"] .cb-send svg {
+  transform: scaleX(-1);
+}
+@media (max-width: 520px) {
+  .cb-panel {
+    inset-inline: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100dvh - env(safe-area-inset-top, 0px));
+    border-radius: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    border: 0;
+  }
+}
