@@ -46,7 +46,6 @@ export default function Capabilities() {
             </button>
           </div>
         </div>
-        <p className="cap-note">{t('capsNote')}</p>
 
         <div className="flow-wrap rv">
           <h3>{t('flowH')}</h3>

@@ -134,10 +134,6 @@ const translations = {
     ar: 'أخبرنا بنوع المنتج والكمية والمراحل التي تحتاجها.',
     en: 'Tell us the product, the volume and the stages you need.',
   },
-  capsNote: {
-    ar: 'تُضاف بقية المواصفات الفنية والطاقات التشغيلية بعد التحقق منها.',
-    en: 'Further technical specifications and capacities will be added once verified.',
-  },
   flowH: { ar: 'مسار التشغيل بشكل عام', en: 'General processing flow' },
   flowP: {
     ar: 'قد تختلف المراحل الفعلية وترتيبها بحسب نوع المنتج والخدمة المطلوبة، ولا تمر جميع المنتجات بالمراحل نفسها.',
@@ -233,10 +229,6 @@ const translations = {
   tip3: { ar: 'نوع العبوة والوزن المطلوب', en: 'Pack type and weight' },
   tip4: { ar: 'دولة التسليم', en: 'Delivery country' },
   formH: { ar: 'طلب عرض سعر', en: 'Request a quote' },
-  demoFlag: {
-    ar: 'نسخة تجريبية: يتحقق النموذج من البيانات لكنه لا يرسلها بعد.',
-    en: 'Preview version: the form checks your details but does not send them yet.',
-  },
   errTitle: { ar: 'يرجى تصحيح الحقول التالية:', en: 'Please correct the following:' },
   lName: { ar: 'الاسم الكامل', en: 'Full name' },
   lCompany: { ar: 'اسم الشركة', en: 'Company name' },
@@ -282,11 +274,6 @@ const translations = {
   eType: { ar: 'يرجى اختيار نوع الطلب.', en: 'Please choose a request type.' },
   eItemSvc: { ar: 'يرجى اختيار نوع الخدمة.', en: 'Please select a service.' },
   eItem: { ar: 'يرجى اختيار المنتج المطلوب أو موضوع الاستفسار.', en: 'Please select a product or subject.' },
-  rDemoH: { ar: 'لم يُرسل الطلب: النموذج في وضع التجربة', en: 'Not sent: the form is in preview mode' },
-  rDemoP: {
-    ar: 'اكتملت البيانات وتحقق النموذج من صحتها، لكنه غير مرتبط بعد بخدمة استقبال، لذلك لم تصل بياناتك إلى سكاي فروت. بقيت البيانات في الحقول كما هي.',
-    en: 'Your details are complete and valid, but the form isn’t connected to a receiving service yet, so nothing reached Sky Fruit. Your entries are still in the form.',
-  },
   rOkH: { ar: 'وصل طلبك', en: 'Request received' },
   rOkP: {
     ar: 'استلم فريق سكاي فروت طلب عرض السعر، وسيتواصل معك عبر البيانات التي أدخلتها.',

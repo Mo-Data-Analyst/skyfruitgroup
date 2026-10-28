@@ -5,9 +5,9 @@ import { PRODUCTS } from '../../data/products';
 import { SERVICES } from '../../data/services';
 import { validateQuote } from './quoteValidation';
 
-// Where submissions are sent. Set VITE_FORM_ENDPOINT in a .env file (see .env.example).
-// While empty, the form checks the data but clearly tells the visitor nothing was sent.
-const FORM_ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT || '';
+// Where submissions are sent (Formspree). VITE_FORM_ENDPOINT in .env overrides it;
+// the built-in URL keeps the form working on hosts where that variable isn't set.
+const FORM_ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT || 'https://formspree.io/f/xnppvqnb';
 
 const EMPTY = {
   name: '',
@@ -28,7 +28,6 @@ const REQUEST_TYPES = [
 ];
 const ITEM_LABEL = { supply: 'lItemSupply', service: 'lItemService', other: 'lItemOther' };
 const RESULT_TEXT = {
-  demo: { className: '', title: 'rDemoH', text: 'rDemoP' },
   ok: { className: 'ok', title: 'rOkH', text: 'rOkP' },
   fail: { className: 'fail', title: 'rFailH', text: 'rFailP' },
 };
@@ -75,11 +74,6 @@ export default function QuoteForm() {
     setErrors(found);
     if (Object.keys(found).length) {
       setTimeout(() => summaryRef.current?.focus(), 0);
-      return;
-    }
-    if (!FORM_ENDPOINT) {
-      setResult('demo');
-      setTimeout(() => resultRef.current?.focus(), 0);
       return;
     }
     setSending(true);
@@ -149,7 +143,6 @@ export default function QuoteForm() {
   return (
     <div className="form-card rv" id="quote">
       <h3 id="quote-title">{t('formH')}</h3>
-      {!FORM_ENDPOINT && <p className="demo-flag">{t('demoFlag')}</p>}
 
       <div
         className={`summary${errorList.length && submitted ? ' on' : ''}`}
